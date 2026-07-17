@@ -13,7 +13,23 @@ const projects = [
     image: "https://image.thum.io/get/width/1920/crop/1080/https://muhammad-taufiq-petscan-ai-web.hf.space",
     features: ["Artificial Intelligence", "Machine Learning", "Health Tech", "Computer Vision"],
     link: "https://muhammad-taufiq-petscan-ai-web.hf.space",
-    featured: true, // Make it take up the full width since it's the only one left
+    featured: true,
+  },
+  {
+    title: "NusantaraGO",
+    description: "Platform penjelajah wisata dan budaya Nusantara dengan antarmuka yang modern, interaktif, dan mudah digunakan.",
+    image: "https://image.thum.io/get/width/1920/crop/1080/https://nusantarago.netlify.app/",
+    features: ["Web Development", "UI/UX Design", "Travel Tech"],
+    link: "https://nusantarago.netlify.app/",
+    featured: false,
+  },
+  {
+    title: "Absensiku",
+    description: "Sistem absensi digital dan manajemen kehadiran berbasis web yang efisien untuk institusi pendidikan maupun perusahaan.",
+    image: "https://image.thum.io/get/width/1920/crop/1080/https://absensiku.vercel.app/",
+    features: ["Management System", "Web Application", "HR Tech"],
+    link: "https://absensiku.vercel.app/",
+    featured: false,
   }
 ];
 
