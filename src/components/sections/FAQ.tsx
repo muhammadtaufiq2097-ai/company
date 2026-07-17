@@ -50,13 +50,13 @@ export function FAQ() {
               className="border border-gray-800 rounded-xl overflow-hidden bg-gray-900/50 hover:border-gray-700 transition-colors"
             >
               <button
-                className="w-full px-6 py-5 flex items-center justify-between text-left focus:outline-none"
+                className="w-full px-6 py-5 flex items-center justify-between gap-4 text-left focus:outline-none"
                 onClick={() => setOpenIndex(openIndex === idx ? null : idx)}
               >
-                <span className="font-medium text-white text-lg">{faq.question}</span>
+                <span className="font-medium text-white text-base md:text-lg">{faq.question}</span>
                 <ChevronDown 
                   className={cn(
-                    "w-5 h-5 text-gray-400 transition-transform duration-300",
+                    "w-5 h-5 flex-shrink-0 text-gray-400 transition-transform duration-300",
                     openIndex === idx ? "rotate-180 text-primary" : ""
                   )} 
                 />
@@ -65,10 +65,10 @@ export function FAQ() {
               <div 
                 className={cn(
                   "px-6 overflow-hidden transition-all duration-300 ease-in-out",
-                  openIndex === idx ? "max-h-40 pb-5 opacity-100" : "max-h-0 opacity-0"
+                  openIndex === idx ? "max-h-96 pb-5 opacity-100" : "max-h-0 opacity-0"
                 )}
               >
-                <p className="text-gray-400">{faq.answer}</p>
+                <p className="text-gray-400 text-sm md:text-base leading-relaxed">{faq.answer}</p>
               </div>
             </div>
           ))}
