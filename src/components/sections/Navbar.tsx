@@ -10,12 +10,12 @@ import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
 
 const navLinks = [
-  { name: "Home", href: "#home" },
-  { name: "About Us", href: "#about" },
-  { name: "Solutions", href: "#solutions" },
-  { name: "Technologies", href: "#technologies" },
+  { name: "Beranda", href: "#home" },
+  { name: "Tentang Kami", href: "#about" },
+  { name: "Solusi", href: "#solutions" },
+  { name: "Teknologi", href: "#technologies" },
   { name: "Machine Learning", href: "#machine-learning" },
-  { name: "Portfolio", href: "#portfolio" },
+  { name: "Portofolio", href: "#portfolio" },
   { name: "FAQ", href: "#faq" },
 ];
 

@@ -15,7 +15,7 @@ export function Footer() {
               <span className="font-bold text-2xl text-white tracking-wider">S-TechX</span>
             </div>
             <p className="text-gray-400 text-lg max-w-sm mb-8">
-              Transforming Ideas Into Intelligent Solutions.
+              Mengubah Ide Menjadi Solusi Cerdas.
             </p>
             <div className="flex gap-4">
               <Link href="#" className="w-10 h-10 rounded-full bg-gray-900 flex items-center justify-center text-gray-400 hover:text-white hover:bg-primary transition-colors">
@@ -37,11 +37,11 @@ export function Footer() {
           </div>
 
           <div>
-            <h4 className="text-white font-semibold text-lg mb-6">Quick Links</h4>
+            <h4 className="text-white font-semibold text-lg mb-6">Tautan Cepat</h4>
             <ul className="space-y-4">
-              {['Home', 'About', 'Services', 'Portfolio', 'FAQ'].map((item) => (
+              {['Beranda', 'Tentang Kami', 'Layanan', 'Portofolio', 'FAQ'].map((item) => (
                 <li key={item}>
-                  <Link href={`#${item.toLowerCase() === 'home' ? 'home' : item.toLowerCase() === 'services' ? 'solutions' : item.toLowerCase()}`} className="text-gray-400 hover:text-primary transition-colors">
+                  <Link href={`#${item === 'Beranda' ? 'home' : item === 'Tentang Kami' ? 'about' : item === 'Layanan' ? 'solutions' : item === 'Portofolio' ? 'portfolio' : 'faq'}`} className="text-gray-400 hover:text-primary transition-colors">
                     {item}
                   </Link>
                 </li>
@@ -53,11 +53,11 @@ export function Footer() {
 
         <div className="border-t border-gray-800 pt-8 flex flex-col md:flex-row items-center justify-between gap-4">
           <p className="text-gray-500 text-sm">
-            © 2026 S-TechX. All Rights Reserved.
+            © 2026 S-TechX. Hak Cipta Dilindungi.
           </p>
           <div className="flex gap-6 text-sm text-gray-500">
-            <Link href="#" className="hover:text-white transition-colors">Privacy Policy</Link>
-            <Link href="#" className="hover:text-white transition-colors">Terms of Service</Link>
+            <Link href="#" className="hover:text-white transition-colors">Kebijakan Privasi</Link>
+            <Link href="#" className="hover:text-white transition-colors">Syarat dan Ketentuan</Link>
           </div>
         </div>
       </div>

@@ -7,37 +7,37 @@ import { motion } from "framer-motion";
 const solutions = [
   {
     icon: <Globe className="w-10 h-10 text-primary" />,
-    title: "Web Development",
+    title: "Pengembangan Web",
     description: "Pembuatan website modern dan responsif.",
     techs: ["Next.js", "React.js", "Node.js"],
   },
   {
     icon: <Smartphone className="w-10 h-10 text-secondary" />,
-    title: "Mobile Development",
+    title: "Pengembangan Mobile",
     description: "Pengembangan aplikasi Android dan iOS.",
     techs: ["Flutter", "React Native"],
   },
   {
     icon: <Cloud className="w-10 h-10 text-accent" />,
-    title: "Cloud Solutions",
+    title: "Solusi Cloud",
     description: "Layanan cloud dan server management.",
     techs: ["AWS", "Docker", "Kubernetes"],
   },
   {
     icon: <Palette className="w-10 h-10 text-pink-500" />,
-    title: "UI/UX Design",
+    title: "Desain UI/UX",
     description: "Desain aplikasi modern dan user friendly.",
     techs: ["Figma", "Framer", "Adobe XD"],
   },
   {
     icon: <BarChart3 className="w-10 h-10 text-emerald-500" />,
-    title: "Data Analytics",
+    title: "Analitik Data",
     description: "Analisis data bisnis dan visualisasi data.",
     techs: ["Python", "Tableau", "PowerBI"],
   },
   {
     icon: <Bot className="w-10 h-10 text-blue-400" />,
-    title: "Artificial Intelligence",
+    title: "Kecerdasan Buatan",
     description: "Penerapan teknologi AI untuk bisnis.",
     techs: ["TensorFlow", "PyTorch", "OpenCV"],
   },

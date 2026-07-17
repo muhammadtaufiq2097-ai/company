@@ -52,9 +52,9 @@ export function Hero() {
           </motion.div>
 
           <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold text-white mb-6 leading-tight max-w-5xl mx-auto">
-            Transforming Business Through{" "}
+            Transformasi Bisnis Melalui{" "}
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-secondary">
-              Technology and Artificial Intelligence
+              Teknologi dan Kecerdasan Buatan
             </span>
           </h1>
 

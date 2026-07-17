@@ -6,22 +6,22 @@ import { motion } from "framer-motion";
 const mlSolutions = [
   {
     icon: <LineChart className="w-8 h-8 text-primary" />,
-    title: "Predictive Analytics",
+    title: "Analitik Prediktif",
     description: "Memprediksi penjualan, permintaan produk, dan tren pasar menggunakan data historis.",
   },
   {
     icon: <ScanEye className="w-8 h-8 text-secondary" />,
-    title: "Computer Vision",
+    title: "Visi Komputer",
     description: "Deteksi kendaraan, deteksi objek, dan face recognition menggunakan YOLO, OpenCV, dan TensorFlow.",
   },
   {
     icon: <MessageSquareText className="w-8 h-8 text-accent" />,
-    title: "Natural Language Processing",
+    title: "Pemrosesan Bahasa Alami",
     description: "Pengembangan Chatbot AI, Sentiment Analysis, dan Text Classification.",
   },
   {
     icon: <BrainCircuit className="w-8 h-8 text-pink-500" />,
-    title: "Recommendation System",
+    title: "Sistem Rekomendasi",
     description: "Meningkatkan konversi untuk Marketplace, E-Commerce, dan Media Streaming.",
   },
 ];
@@ -42,7 +42,7 @@ export function MachineLearning() {
             transition={{ duration: 0.6 }}
             className="w-full lg:w-1/2 space-y-6"
           >
-            <h2 className="text-sm font-bold tracking-widest text-primary uppercase">Machine Learning Solutions</h2>
+            <h2 className="text-sm font-bold tracking-widest text-primary uppercase">Solusi Machine Learning</h2>
             <h3 className="text-3xl md:text-5xl font-bold text-white leading-tight">
               Kecerdasan Buatan untuk <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-accent">Bisnis yang Lebih Cerdas</span>
             </h3>
