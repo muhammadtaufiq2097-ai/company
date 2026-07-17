@@ -13,7 +13,7 @@ const projects = [
     image: "https://image.thum.io/get/width/1920/crop/1080/https://muhammad-taufiq-petscan-ai-web.hf.space",
     features: ["Artificial Intelligence", "Machine Learning", "Health Tech", "Computer Vision"],
     link: "https://muhammad-taufiq-petscan-ai-web.hf.space",
-    featured: true,
+    featured: false,
   },
   {
     title: "NusantaraGO",
@@ -26,7 +26,7 @@ const projects = [
   {
     title: "Absensiku",
     description: "Sistem absensi digital dan manajemen kehadiran berbasis web yang efisien untuk institusi pendidikan maupun perusahaan.",
-    image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=1200&q=80",
+    image: "https://image.thum.io/get/width/1920/crop/1080/https://absensiku.vercel.app/",
     features: ["Management System", "Web Application", "HR Tech"],
     link: "https://absensiku.vercel.app/",
     featured: false,
