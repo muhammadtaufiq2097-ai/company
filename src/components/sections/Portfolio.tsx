@@ -26,7 +26,7 @@ const projects = [
   {
     title: "Absensiku",
     description: "Sistem absensi digital dan manajemen kehadiran berbasis web yang efisien untuk institusi pendidikan maupun perusahaan.",
-    image: "https://image.thum.io/get/width/1920/crop/1080/https://absensiku.vercel.app/",
+    image: "https://api.microlink.io/?url=https://absensiku.vercel.app/&screenshot=true&meta=false&embed=screenshot.url",
     features: ["Management System", "Web Application", "HR Tech"],
     link: "https://absensiku.vercel.app/",
     featured: false,
