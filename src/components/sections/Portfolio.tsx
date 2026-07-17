@@ -16,9 +16,9 @@ const projects = [
     title: "Portfolio Web S-TechX",
     description: "Desain antarmuka portfolio personal modern, interaktif, dan responsif. Menggunakan teknologi terkini untuk pengalaman pengguna yang maksimal.",
     images: [
-      "https://s0.wp.com/mshots/v1/https://salahudinkholikprasetyono.netlify.app?w=1200",
-      "https://s0.wp.com/mshots/v1/https://salahudinkholikprasetyono.netlify.app/#projects?w=1200",
-      "https://s0.wp.com/mshots/v1/https://salahudinkholikprasetyono.netlify.app/#about?w=1200"
+      "https://api.microlink.io/?url=https://salahudinkholikprasetyono.netlify.app&screenshot=true&meta=false&embed=screenshot.url",
+      "https://api.microlink.io/?url=https://salahudinkholikprasetyono.netlify.app/%23projects&screenshot=true&meta=false&embed=screenshot.url",
+      "https://api.microlink.io/?url=https://salahudinkholikprasetyono.netlify.app/%23about&screenshot=true&meta=false&embed=screenshot.url"
     ],
     features: ["Web Development", "UI/UX Design", "Interactive", "Responsive"],
     link: "https://salahudinkholikprasetyono.netlify.app",
@@ -28,9 +28,9 @@ const projects = [
     title: "PetScan AI Web",
     description: "Aplikasi cerdas berbasis web untuk deteksi dan klasifikasi kesehatan hewan peliharaan memanfaatkan teknologi Machine Learning.",
     images: [
-      "https://s0.wp.com/mshots/v1/https://muhammad-taufiq-petscan-ai-web.hf.space?w=1200",
-      "https://s0.wp.com/mshots/v1/https://muhammad-taufiq-petscan-ai-web.hf.space/?view=1&w=1200",
-      "https://s0.wp.com/mshots/v1/https://muhammad-taufiq-petscan-ai-web.hf.space/?view=2&w=1200"
+      "https://api.microlink.io/?url=https://muhammad-taufiq-petscan-ai-web.hf.space&screenshot=true&meta=false&embed=screenshot.url",
+      "https://api.microlink.io/?url=https://muhammad-taufiq-petscan-ai-web.hf.space/?view=1&screenshot=true&meta=false&embed=screenshot.url",
+      "https://api.microlink.io/?url=https://muhammad-taufiq-petscan-ai-web.hf.space/?view=2&screenshot=true&meta=false&embed=screenshot.url"
     ],
     features: ["Artificial Intelligence", "Machine Learning", "Health Tech", "Computer Vision"],
     link: "https://muhammad-taufiq-petscan-ai-web.hf.space",
