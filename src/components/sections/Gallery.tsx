@@ -27,47 +27,27 @@ export function Gallery() {
           </p>
         </div>
 
-        <div className="flex flex-col lg:flex-row gap-8">
-          <div className="w-full lg:w-1/2 rounded-2xl overflow-hidden shadow-2xl border border-gray-800">
+        <div className="flex justify-center">
+          <div className="w-full max-w-5xl rounded-2xl overflow-hidden shadow-2xl border border-gray-800">
             <Swiper
               modules={[Autoplay, EffectFade, Pagination]}
               effect="fade"
               pagination={{ clickable: true }}
               autoplay={{ delay: 3000, disableOnInteraction: false }}
-              className="w-full aspect-video"
+              className="w-full aspect-[21/9]"
             >
               {images.map((img, idx) => (
                 <SwiperSlide key={idx}>
                   <div className="relative w-full h-full">
-                    <Image src={img.src} alt={img.alt} fill sizes="(max-width: 768px) 100vw, 50vw" className="object-cover" />
+                    <Image src={img.src} alt={img.alt} fill sizes="(max-width: 768px) 100vw, 100vw" className="object-cover" />
                     <div className="absolute inset-0 bg-gradient-to-t from-gray-900 via-transparent to-transparent opacity-80" />
                     <div className="absolute bottom-6 left-6">
-                      <p className="text-white font-semibold text-lg">{img.alt}</p>
+                      <p className="text-white font-semibold text-lg md:text-xl">{img.alt}</p>
                     </div>
                   </div>
                 </SwiperSlide>
               ))}
             </Swiper>
-          </div>
-
-          <div className="w-full lg:w-1/2 relative rounded-2xl overflow-hidden shadow-2xl border border-gray-800 bg-gray-900 aspect-video flex items-center justify-center group">
-            {/* Fallback to generic video or placeholder since specific video is not provided */}
-            <video 
-              autoPlay 
-              loop 
-              muted 
-              playsInline
-              className="absolute inset-0 w-full h-full object-cover opacity-60 group-hover:opacity-100 transition-opacity duration-500"
-            >
-              <source src="https://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4" />
-            </video>
-            <div className="absolute inset-0 bg-primary/20 mix-blend-overlay pointer-events-none" />
-            <div className="z-10 text-center pointer-events-none">
-              <div className="w-16 h-16 bg-white/20 backdrop-blur-md rounded-full flex items-center justify-center mx-auto mb-4 border border-white/50">
-                <div className="w-0 h-0 border-t-8 border-t-transparent border-l-12 border-l-white border-b-8 border-b-transparent ml-1" />
-              </div>
-              <h4 className="text-white font-bold text-xl tracking-wide shadow-black drop-shadow-md">Company Profile Video</h4>
-            </div>
           </div>
         </div>
       </div>
