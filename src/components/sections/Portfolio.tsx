@@ -80,11 +80,10 @@ export function Portfolio() {
                           alt={project.title} 
                           fill 
                           sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                          className="object-cover transition-all duration-700 group-hover:scale-110 group-hover:-rotate-2 group-hover:brightness-110"
+                          className="object-cover object-top transition-all duration-700 group-hover:scale-110 group-hover:-rotate-2 group-hover:brightness-110"
                         />
                       </motion.div>
                     </motion.div>
-                    <div className="absolute inset-0 bg-gradient-to-t from-gray-900 via-gray-900/40 to-transparent opacity-90 group-hover:opacity-70 transition-opacity duration-500 pointer-events-none" />
                   </div>
                   
                   <CardContent className={`flex flex-col p-8 ${project.featured ? 'lg:w-1/2 justify-center' : 'w-full'}`}>
