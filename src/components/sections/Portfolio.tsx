@@ -10,7 +10,7 @@ const projects = [
   {
     title: "Portfolio Web S-TechX",
     description: "Desain antarmuka portfolio personal modern, interaktif, dan responsif. Menggunakan teknologi terkini untuk pengalaman pengguna yang maksimal.",
-    image: "https://image.thum.io/get/width/1200/crop/800/https://salahudinkholikprasetyono.netlify.app",
+    image: "https://s0.wp.com/mshots/v1/https://salahudinkholikprasetyono.netlify.app?w=1200",
     features: ["Web Development", "UI/UX Design", "Interactive", "Responsive"],
     link: "https://salahudinkholikprasetyono.netlify.app",
     featured: false,
@@ -18,7 +18,7 @@ const projects = [
   {
     title: "PetScan AI Web",
     description: "Aplikasi cerdas berbasis web untuk deteksi dan klasifikasi kesehatan hewan peliharaan memanfaatkan teknologi Machine Learning.",
-    image: "https://image.thum.io/get/width/1200/crop/800/https://muhammad-taufiq-petscan-ai-web.hf.space",
+    image: "https://s0.wp.com/mshots/v1/https://muhammad-taufiq-petscan-ai-web.hf.space?w=1200",
     features: ["Artificial Intelligence", "Machine Learning", "Health Tech", "Computer Vision"],
     link: "https://muhammad-taufiq-petscan-ai-web.hf.space",
     featured: false,
