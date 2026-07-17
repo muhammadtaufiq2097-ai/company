@@ -8,35 +8,19 @@ import { motion } from "framer-motion";
 
 const projects = [
   {
-    title: "IKON GLOP",
-    description: "Platform digital untuk pengelolaan data, monitoring aktivitas, serta penyajian informasi secara real-time melalui dashboard interaktif.",
-    image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80",
-    features: ["Dashboard Monitoring", "Data Analytics", "Reporting System", "Multi User Access"],
-    link: "#",
-    featured: true,
-  },
-  {
-    title: "Smart Attendance System",
-    description: "Sistem absensi cerdas menggunakan teknologi face recognition dan geofencing.",
-    image: "https://images.unsplash.com/photo-1555949963-ff9fe0c870eb?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80",
-    features: ["Face Recognition", "Geofencing", "Real-time Report"],
-    link: "#",
+    title: "Portfolio Web S-TechX",
+    description: "Desain antarmuka portfolio personal modern, interaktif, dan responsif. Menggunakan teknologi terkini untuk pengalaman pengguna yang maksimal.",
+    image: "https://image.thum.io/get/width/1200/crop/800/https://salahudinkholikprasetyono.netlify.app",
+    features: ["Web Development", "UI/UX Design", "Interactive", "Responsive"],
+    link: "https://salahudinkholikprasetyono.netlify.app",
     featured: false,
   },
   {
-    title: "AI Object Detection",
-    description: "Implementasi Computer Vision untuk deteksi objek otomatis di area pabrik.",
-    image: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80",
-    features: ["YOLO", "OpenCV", "Anomaly Detection"],
-    link: "#",
-    featured: false,
-  },
-  {
-    title: "E-Commerce Platform",
-    description: "Aplikasi e-commerce modern dengan sistem rekomendasi produk berbasis AI.",
-    image: "https://images.unsplash.com/photo-1563013544-824ae1b704d3?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80",
-    features: ["Recommendation Engine", "Payment Gateway", "Mobile App"],
-    link: "#",
+    title: "PetScan AI Web",
+    description: "Aplikasi cerdas berbasis web untuk deteksi dan klasifikasi kesehatan hewan peliharaan memanfaatkan teknologi Machine Learning.",
+    image: "https://image.thum.io/get/width/1200/crop/800/https://muhammad-taufiq-petscan-ai-web.hf.space",
+    features: ["Artificial Intelligence", "Machine Learning", "Health Tech", "Computer Vision"],
+    link: "https://muhammad-taufiq-petscan-ai-web.hf.space",
     featured: false,
   },
 ];
@@ -108,9 +92,13 @@ export function Portfolio() {
                     </div>
 
                     <div className="mt-auto">
-                      <Button variant="outline" className="border-primary text-primary hover:bg-primary hover:text-white rounded-full group/btn w-fit">
+                      <Button 
+                        variant="outline" 
+                        onClick={() => window.open(project.link, "_blank")}
+                        className="border-primary text-primary hover:bg-primary hover:text-white rounded-full group/btn w-fit"
+                      >
                         <ExternalLink className="w-4 h-4 mr-2" />
-                        Visit Website
+                        Kunjungi Website
                       </Button>
                     </div>
                   </CardContent>
