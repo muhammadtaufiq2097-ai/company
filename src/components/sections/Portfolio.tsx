@@ -30,6 +30,14 @@ const projects = [
     features: ["Management System", "Web Application", "HR Tech"],
     link: "https://absensiku.vercel.app/",
     featured: false,
+  },
+  {
+    title: "EcoScanner AI",
+    description: "Aplikasi berbasis kecerdasan buatan untuk deteksi dan analisis lingkungan secara cerdas melalui teknologi Computer Vision.",
+    image: "https://api.microlink.io/?url=https://muhammad-taufiq-ecoscanner-baru.hf.space&screenshot=true&meta=false&embed=screenshot.url",
+    features: ["Artificial Intelligence", "Computer Vision", "Green Tech"],
+    link: "https://muhammad-taufiq-ecoscanner-baru.hf.space",
+    featured: false,
   }
 ];
 
