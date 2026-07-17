@@ -55,31 +55,7 @@ export function Portfolio() {
             >
               <Card className={`bg-gray-900 border-gray-800 overflow-hidden group h-full`}>
                 <div className={`flex flex-col ${project.featured ? 'lg:flex-row' : ''} h-full`}>
-                  <div className={`relative ${project.featured ? 'lg:w-1/2' : 'w-full'} aspect-video overflow-hidden`}>
-                    <motion.div
-                      initial={{ scale: 1.2, filter: "blur(10px)", opacity: 0 }}
-                      whileInView={{ scale: 1, filter: "blur(0px)", opacity: 1 }}
-                      transition={{ duration: 0.8, ease: "easeOut", delay: idx * 0.1 + 0.2 }}
-                      className="absolute inset-0"
-                    >
-                      <motion.div
-                        animate={{ scale: [1, 1.05, 1], rotate: [0, -1, 0] }}
-                        transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
-                        className="absolute inset-0"
-                      >
-                        <Image 
-                          src={project.image} 
-                          alt={project.title} 
-                          fill 
-                          sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                          className="object-cover transition-all duration-700 group-hover:scale-110 group-hover:-rotate-2 group-hover:brightness-110"
-                        />
-                      </motion.div>
-                    </motion.div>
-                    <div className="absolute inset-0 bg-gradient-to-t from-gray-900 via-gray-900/40 to-transparent opacity-90 group-hover:opacity-70 transition-opacity duration-500 pointer-events-none" />
-                  </div>
-                  
-                  <CardContent className={`flex flex-col p-8 ${project.featured ? 'lg:w-1/2 justify-center' : ''}`}>
+                  <CardContent className={`flex flex-col p-8 w-full`}>
                     <h4 className="text-2xl font-bold text-white mb-3 group-hover:text-primary transition-colors">{project.title}</h4>
                     <p className="text-gray-400 mb-6">{project.description}</p>
                     
