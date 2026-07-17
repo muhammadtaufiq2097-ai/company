@@ -20,8 +20,8 @@ export function Contact() {
 
   const handleEmail = (e: React.MouseEvent) => {
     e.preventDefault();
-    // Mengarahkan langsung ke website Gmail (Compose Baru)
-    window.open(`https://mail.google.com/mail/?view=cm&fs=1&to=${ownerEmail}`, "_blank");
+    // Menggunakan protokol mailto agar terbuka di aplikasi email bawaan HP (seperti Gmail App)
+    window.location.href = `mailto:${ownerEmail}`;
   };
 
   return (
