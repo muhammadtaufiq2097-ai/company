@@ -26,7 +26,7 @@ const projects = [
   {
     title: "Absensiku",
     description: "Sistem absensi digital dan manajemen kehadiran berbasis web yang efisien untuk institusi pendidikan maupun perusahaan.",
-    image: "https://image.thum.io/get/width/1920/crop/1080/https://absensiku.vercel.app/",
+    image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=1200&q=80",
     features: ["Management System", "Web Application", "HR Tech"],
     link: "https://absensiku.vercel.app/",
     featured: false,
@@ -62,8 +62,8 @@ export function Portfolio() {
               className={project.featured ? 'lg:col-span-2' : ''}
             >
               <Card className={`bg-gray-900 border-gray-800 overflow-hidden group h-full`}>
-                <div className={`flex flex-col ${project.featured ? 'lg:flex-row' : ''} h-full`}>
-                  <div className={`relative ${project.featured ? 'lg:w-1/2' : 'w-full'} aspect-video overflow-hidden`}>
+                <div className={`flex flex-col h-full`}>
+                  <div className={`relative w-full aspect-video overflow-hidden`}>
                     <motion.div
                       initial={{ scale: 1.2, filter: "blur(10px)", opacity: 0 }}
                       whileInView={{ scale: 1, filter: "blur(0px)", opacity: 1 }}
@@ -86,7 +86,7 @@ export function Portfolio() {
                     </motion.div>
                   </div>
                   
-                  <CardContent className={`flex flex-col p-8 ${project.featured ? 'lg:w-1/2 justify-center' : 'w-full'}`}>
+                  <CardContent className={`flex flex-col p-8 w-full`}>
                     <h4 className="text-2xl font-bold text-white mb-3 group-hover:text-primary transition-colors">{project.title}</h4>
                     <p className="text-gray-400 mb-6">{project.description}</p>
                     
