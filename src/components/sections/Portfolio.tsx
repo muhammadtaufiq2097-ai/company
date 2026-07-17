@@ -5,21 +5,12 @@ import { Button } from "@/components/ui/button";
 import { ExternalLink } from "lucide-react";
 import Image from "next/image";
 import { motion } from "framer-motion";
-import { Swiper, SwiperSlide } from "swiper/react";
-import { Autoplay, EffectFade, Pagination } from "swiper/modules";
-import "swiper/css";
-import "swiper/css/effect-fade";
-import "swiper/css/pagination";
 
 const projects = [
   {
     title: "Portfolio Web S-TechX",
     description: "Desain antarmuka portfolio personal modern, interaktif, dan responsif. Menggunakan teknologi terkini untuk pengalaman pengguna yang maksimal.",
-    images: [
-      "https://image.thum.io/get/width/1920/crop/1080/https://salahudinkholikprasetyono.netlify.app",
-      "https://image.thum.io/get/width/1920/crop/1080/https://salahudinkholikprasetyono.netlify.app/#projects",
-      "https://image.thum.io/get/width/1920/crop/1080/https://salahudinkholikprasetyono.netlify.app/#about"
-    ],
+    image: "https://image.thum.io/get/width/1920/crop/1080/https://salahudinkholikprasetyono.netlify.app",
     features: ["Web Development", "UI/UX Design", "Interactive", "Responsive"],
     link: "https://salahudinkholikprasetyono.netlify.app",
     featured: false,
@@ -27,11 +18,7 @@ const projects = [
   {
     title: "PetScan AI Web",
     description: "Aplikasi cerdas berbasis web untuk deteksi dan klasifikasi kesehatan hewan peliharaan memanfaatkan teknologi Machine Learning.",
-    images: [
-      "https://image.thum.io/get/width/1920/crop/1080/https://muhammad-taufiq-petscan-ai-web.hf.space",
-      "https://image.thum.io/get/width/1920/crop/1080/https://muhammad-taufiq-petscan-ai-web.hf.space/?view=1",
-      "https://image.thum.io/get/width/1920/crop/1080/https://muhammad-taufiq-petscan-ai-web.hf.space/?view=2"
-    ],
+    image: "https://image.thum.io/get/width/1920/crop/1080/https://muhammad-taufiq-petscan-ai-web.hf.space",
     features: ["Artificial Intelligence", "Machine Learning", "Health Tech", "Computer Vision"],
     link: "https://muhammad-taufiq-petscan-ai-web.hf.space",
     featured: false,
@@ -69,39 +56,27 @@ export function Portfolio() {
               <Card className={`bg-gray-900 border-gray-800 overflow-hidden group h-full`}>
                 <div className={`flex flex-col ${project.featured ? 'lg:flex-row' : ''} h-full`}>
                   <div className={`relative ${project.featured ? 'lg:w-1/2' : 'w-full'} aspect-video overflow-hidden`}>
-                    <Swiper
-                      modules={[Autoplay, EffectFade, Pagination]}
-                      effect="fade"
-                      pagination={{ clickable: true }}
-                      autoplay={{ delay: 3500 + (idx * 500), disableOnInteraction: false }}
-                      className="w-full h-full absolute inset-0 z-0"
+                    <motion.div
+                      initial={{ scale: 1.2, filter: "blur(10px)", opacity: 0 }}
+                      whileInView={{ scale: 1, filter: "blur(0px)", opacity: 1 }}
+                      transition={{ duration: 0.8, ease: "easeOut", delay: idx * 0.1 + 0.2 }}
+                      className="absolute inset-0"
                     >
-                      {project.images.map((imgSrc, imgIdx) => (
-                        <SwiperSlide key={imgIdx}>
-                          <motion.div
-                            initial={{ scale: 1.2, filter: "blur(10px)", opacity: 0 }}
-                            whileInView={{ scale: 1, filter: "blur(0px)", opacity: 1 }}
-                            transition={{ duration: 0.8, ease: "easeOut", delay: idx * 0.1 + 0.2 }}
-                            className="absolute inset-0"
-                          >
-                            <motion.div
-                              animate={{ scale: [1, 1.05, 1], rotate: [0, -1, 0] }}
-                              transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
-                              className="absolute inset-0"
-                            >
-                              <Image 
-                                src={imgSrc} 
-                                alt={`${project.title} - Preview ${imgIdx + 1}`} 
-                                fill 
-                                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                                className="object-cover transition-all duration-700 group-hover:scale-110 group-hover:-rotate-2 group-hover:brightness-110"
-                              />
-                            </motion.div>
-                          </motion.div>
-                        </SwiperSlide>
-                      ))}
-                    </Swiper>
-                    <div className="absolute inset-0 bg-gradient-to-t from-gray-900 via-gray-900/40 to-transparent opacity-90 group-hover:opacity-70 transition-opacity duration-500 pointer-events-none z-10" />
+                      <motion.div
+                        animate={{ scale: [1, 1.05, 1], rotate: [0, -1, 0] }}
+                        transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
+                        className="absolute inset-0"
+                      >
+                        <Image 
+                          src={project.image} 
+                          alt={project.title} 
+                          fill 
+                          sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                          className="object-cover transition-all duration-700 group-hover:scale-110 group-hover:-rotate-2 group-hover:brightness-110"
+                        />
+                      </motion.div>
+                    </motion.div>
+                    <div className="absolute inset-0 bg-gradient-to-t from-gray-900 via-gray-900/40 to-transparent opacity-90 group-hover:opacity-70 transition-opacity duration-500 pointer-events-none" />
                   </div>
                   
                   <CardContent className={`flex flex-col p-8 ${project.featured ? 'lg:w-1/2 justify-center' : ''}`}>
