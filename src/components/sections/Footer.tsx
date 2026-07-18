@@ -64,7 +64,7 @@ export function Footer() {
               ></iframe>
             </div>
             <p className="text-gray-500 text-sm mt-4">
-              Kota Tangerang Selatan, Banten, Indonesia
+              Jl. Regensi 1 No.46 Blok J5, RT.02/RW.06, Wanasari, Kec. Cibitung, Kabupaten Bekasi, Jawa Barat 17520
             </p>
           </div>
 
