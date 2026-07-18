@@ -1,3 +1,5 @@
+"use client";
+
 import Link from "next/link";
 import { FaGithub, FaLinkedin, FaInstagram, FaFacebook, FaYoutube } from "react-icons/fa";
 import Image from "next/image";
