@@ -72,21 +72,32 @@ export function Navbar() {
       )}
     >
       <div className="container mx-auto px-4 md:px-8 flex items-center justify-between">
-        <Link href="#home" className="flex items-center gap-2">
+        <a 
+          href="#home" 
+          onClick={(e) => {
+            e.preventDefault();
+            document.querySelector("#home")?.scrollIntoView({ behavior: "smooth" });
+          }}
+          className="flex items-center gap-2"
+        >
           <div className="relative w-10 h-10 rounded-full overflow-hidden border-2 border-primary">
             <Image src="/images/logo.jpg" alt="S-TechX Logo" fill sizes="40px" className="object-cover" />
           </div>
           <span className="font-bold text-xl text-white tracking-wider">S-TechX</span>
-        </Link>
+        </a>
 
         {/* Desktop Nav */}
         <div className="hidden lg:flex items-center gap-6">
           {navLinks.map((link) => {
             const isActive = activeSection === link.href.substring(1);
             return (
-              <Link
+              <a
                 key={link.name}
                 href={link.href}
+                onClick={(e) => {
+                  e.preventDefault();
+                  document.querySelector(link.href)?.scrollIntoView({ behavior: "smooth" });
+                }}
                 className={cn(
                   "text-sm font-medium transition-colors relative group",
                   isActive ? "text-primary" : "text-gray-300 hover:text-primary"
@@ -99,7 +110,7 @@ export function Navbar() {
                     isActive ? "w-full" : "w-0 group-hover:w-full"
                   )} 
                 />
-              </Link>
+              </a>
             );
           })}
         </div>
@@ -141,7 +152,6 @@ export function Navbar() {
                         const target = document.querySelector(link.href);
                         if (target) {
                           target.scrollIntoView({ behavior: 'smooth' });
-                          window.history.pushState(null, '', link.href);
                         }
                       }, 100);
                     }}

@@ -39,13 +39,23 @@ export function Footer() {
           <div>
             <h4 className="text-white font-semibold text-lg mb-6">Tautan Cepat</h4>
             <ul className="space-y-4">
-              {['Beranda', 'Tentang Kami', 'Layanan', 'Portofolio', 'FAQ'].map((item) => (
-                <li key={item}>
-                  <Link href={`#${item === 'Beranda' ? 'home' : item === 'Tentang Kami' ? 'about' : item === 'Layanan' ? 'solutions' : item === 'Portofolio' ? 'portfolio' : 'faq'}`} className="text-gray-400 hover:text-primary transition-colors">
-                    {item}
-                  </Link>
-                </li>
-              ))}
+              {['Beranda', 'Tentang Kami', 'Layanan', 'Portofolio', 'FAQ'].map((item) => {
+                const targetId = `#${item === 'Beranda' ? 'home' : item === 'Tentang Kami' ? 'about' : item === 'Layanan' ? 'solutions' : item === 'Portofolio' ? 'portfolio' : 'faq'}`;
+                return (
+                  <li key={item}>
+                    <a 
+                      href={targetId} 
+                      onClick={(e) => {
+                        e.preventDefault();
+                        document.querySelector(targetId)?.scrollIntoView({ behavior: 'smooth' });
+                      }}
+                      className="text-gray-400 hover:text-primary transition-colors cursor-pointer"
+                    >
+                      {item}
+                    </a>
+                  </li>
+                );
+              })}
             </ul>
           </div>
           
