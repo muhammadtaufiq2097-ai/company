@@ -73,7 +73,7 @@ export function Navbar() {
     >
       <div className="container mx-auto px-4 md:px-8 flex items-center justify-between">
         <a 
-          href="javascript:void(0)"
+          href="home"
           onClick={(e) => {
             e.preventDefault();
             const el = document.getElementById("home");
@@ -96,7 +96,7 @@ export function Navbar() {
             return (
               <a
                 key={link.name}
-                href="javascript:void(0)"
+                href={link.href}
                 onClick={(e) => {
                   e.preventDefault();
                   const targetId = link.href;
@@ -147,7 +147,7 @@ export function Navbar() {
                 return (
                   <a
                     key={link.name}
-                    href="javascript:void(0)"
+                    href={link.href}
                     className={cn(
                       "text-base font-medium transition-colors relative group w-fit pb-1 text-left cursor-pointer",
                       isActive ? "text-primary" : "text-gray-300 hover:text-primary"

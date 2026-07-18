@@ -46,7 +46,7 @@ export function Footer() {
                 return (
                   <li key={item}>
                     <a 
-                      href="javascript:void(0)"
+                      href={targetId}
                       onClick={(e) => {
                         e.preventDefault();
                         const el = document.getElementById(targetId);
