@@ -10,6 +10,7 @@ import { motion, AnimatePresence } from "framer-motion";
 
 export function Contact() {
   const [isOpen, setIsOpen] = useState(false);
+  const [contactMethod, setContactMethod] = useState<"email" | "whatsapp">("email");
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [whatsapp, setWhatsapp] = useState("");
@@ -180,28 +181,43 @@ export function Contact() {
                     </div>
 
                     <div className="space-y-1.5">
-                      <label className="text-xs font-medium text-gray-400 ml-1">Alamat Email <span className="text-gray-600 font-normal italic">(Wajib jika kirim via Email)</span></label>
-                      <Input 
-                        type="email"
-                        placeholder="email@anda.com" 
-                        value={email}
-                        onChange={(e) => setEmail(e.target.value)}
-                        className="bg-gray-900 border-gray-800 text-white placeholder:text-gray-600 focus-visible:ring-primary h-11"
+                      <label className="text-xs font-medium text-gray-400 ml-1">Metode Balasan <span className="text-red-500">*</span></label>
+                      <select 
+                        value={contactMethod}
+                        onChange={(e) => setContactMethod(e.target.value as "email" | "whatsapp")}
+                        className="w-full bg-gray-900 border border-gray-800 text-white focus:ring-primary focus:border-primary h-11 rounded-md px-3 text-sm appearance-none outline-none transition-all duration-200"
                         disabled={isSubmitting}
-                      />
+                      >
+                        <option value="email">Balas via Email</option>
+                        <option value="whatsapp">Balas via WhatsApp</option>
+                      </select>
                     </div>
-                    
-                    <div className="space-y-1.5">
-                      <label className="text-xs font-medium text-gray-400 ml-1">No. WhatsApp <span className="text-gray-600 font-normal italic">(Wajib jika kirim via WA)</span></label>
-                      <Input 
-                        type="tel"
-                        placeholder="Contoh: 0812..." 
-                        value={whatsapp}
-                        onChange={(e) => setWhatsapp(e.target.value)}
-                        className="bg-gray-900 border-gray-800 text-white placeholder:text-gray-600 focus-visible:ring-primary h-11"
-                        disabled={isSubmitting}
-                      />
-                    </div>
+
+                    {contactMethod === "email" ? (
+                      <div className="space-y-1.5 animate-in fade-in slide-in-from-top-1 duration-200">
+                        <label className="text-xs font-medium text-gray-400 ml-1">Alamat Email <span className="text-red-500">*</span></label>
+                        <Input 
+                          type="email"
+                          placeholder="email@anda.com" 
+                          value={email}
+                          onChange={(e) => setEmail(e.target.value)}
+                          className="bg-gray-900 border-gray-800 text-white placeholder:text-gray-600 focus-visible:ring-primary h-11"
+                          disabled={isSubmitting}
+                        />
+                      </div>
+                    ) : (
+                      <div className="space-y-1.5 animate-in fade-in slide-in-from-top-1 duration-200">
+                        <label className="text-xs font-medium text-gray-400 ml-1">No. WhatsApp <span className="text-red-500">*</span></label>
+                        <Input 
+                          type="tel"
+                          placeholder="Contoh: 0812..." 
+                          value={whatsapp}
+                          onChange={(e) => setWhatsapp(e.target.value)}
+                          className="bg-gray-900 border-gray-800 text-white placeholder:text-gray-600 focus-visible:ring-primary h-11"
+                          disabled={isSubmitting}
+                        />
+                      </div>
+                    )}
                     
                     <div className="space-y-1.5">
                       <label className="text-xs font-medium text-gray-400 ml-1">Perusahaan <span className="text-gray-600 font-normal italic">(Opsional)</span></label>
@@ -244,36 +260,34 @@ export function Contact() {
                   )}
 
                   <div className="flex flex-col gap-3 mt-6">
-                    <Button 
-                      onClick={handleEmailSubmit}
-                      disabled={isSubmitting || !isEmailValid}
-                      className={`w-full bg-primary text-white rounded-xl h-12 text-sm font-medium flex items-center justify-center gap-2.5 transition-all duration-300 shadow-lg shadow-primary/20 ${isSubmitting || !isEmailValid ? "opacity-50 cursor-not-allowed" : "hover:bg-blue-600 hover:scale-[1.02] active:scale-[0.98]"}`}
-                    >
-                      {isSubmitting ? (
-                        <>
-                          <Loader2 className="w-[18px] h-[18px] animate-spin" />
-                          Mengirim Pesan...
-                        </>
-                      ) : (
-                        <>
-                          <Send className="w-[18px] h-[18px]" />
-                          Kirim Pesan (Otomatis)
-                        </>
-                      )}
-                    </Button>
-                    <div className="relative flex items-center py-2">
-                      <div className="flex-grow border-t border-gray-800"></div>
-                      <span className="flex-shrink-0 mx-4 text-gray-500 text-xs font-medium">ATAU</span>
-                      <div className="flex-grow border-t border-gray-800"></div>
-                    </div>
-                    <Button 
-                      onClick={handleWhatsApp}
-                      disabled={isSubmitting || !isWaValid}
-                      className={`w-full bg-[#25D366] text-white rounded-xl h-12 text-sm font-medium flex items-center justify-center gap-2.5 transition-all duration-300 shadow-lg shadow-[#25D366]/10 ${isSubmitting || !isWaValid ? "opacity-50 cursor-not-allowed" : "hover:bg-[#20b858] hover:scale-[1.02] active:scale-[0.98]"}`}
-                    >
-                      <FaWhatsapp className="w-[18px] h-[18px]" />
-                      Kirim via WhatsApp
-                    </Button>
+                    {contactMethod === "email" ? (
+                      <Button 
+                        onClick={handleEmailSubmit}
+                        disabled={isSubmitting || !isEmailValid}
+                        className={`w-full bg-primary text-white rounded-xl h-12 text-sm font-medium flex items-center justify-center gap-2.5 transition-all duration-300 shadow-lg shadow-primary/20 ${isSubmitting || !isEmailValid ? "opacity-50 cursor-not-allowed" : "hover:bg-blue-600 hover:scale-[1.02] active:scale-[0.98]"}`}
+                      >
+                        {isSubmitting ? (
+                          <>
+                            <Loader2 className="w-[18px] h-[18px] animate-spin" />
+                            Mengirim Pesan...
+                          </>
+                        ) : (
+                          <>
+                            <Send className="w-[18px] h-[18px]" />
+                            Kirim Pesan (Otomatis)
+                          </>
+                        )}
+                      </Button>
+                    ) : (
+                      <Button 
+                        onClick={handleWhatsApp}
+                        disabled={isSubmitting || !isWaValid}
+                        className={`w-full bg-[#25D366] text-white rounded-xl h-12 text-sm font-medium flex items-center justify-center gap-2.5 transition-all duration-300 shadow-lg shadow-[#25D366]/10 ${isSubmitting || !isWaValid ? "opacity-50 cursor-not-allowed" : "hover:bg-[#20b858] hover:scale-[1.02] active:scale-[0.98]"}`}
+                      >
+                        <FaWhatsapp className="w-[18px] h-[18px]" />
+                        Kirim via WhatsApp
+                      </Button>
+                    )}
                   </div>
                 </>
               )}
