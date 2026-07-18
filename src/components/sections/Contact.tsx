@@ -20,13 +20,19 @@ export function Contact() {
   const ownerEmail = "salahudinkoliq10@gmail.com";
 
   const getMessageText = () => {
-    let text = `Halo tim S-TechX, perkenalkan saya *${name || "Seseorang"}*`;
-    if (company) text += ` dari *${company}*`;
-    text += `.\n\nSaya bermaksud untuk berdiskusi terkait *${purpose}*.`;
+    let text = `Halo tim S-TechX,\n`;
+    text += `Perkenalkan saya : ${name || "-"}\n`;
+    
+    if (company) {
+      text += `Dari perusahaan atau bisnis : ${company}\n`;
+    }
+    
+    text += `Tujuan / Keperluan : ${purpose}\n\n`;
+    
     if (message) {
-      text += `\n\nBerikut adalah detail kebutuhan / pesan saya:\n"${message}"`;
+      text += `Detail pesan :\n${message}`;
     } else {
-      text += "\n\nApakah kita bisa menjadwalkan waktu untuk ngobrol lebih lanjut mengenai hal ini?";
+      text += `Apakah kita bisa menjadwalkan waktu untuk berdiskusi lebih lanjut mengenai hal ini?`;
     }
     return encodeURIComponent(text);
   };
