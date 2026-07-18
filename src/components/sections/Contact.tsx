@@ -22,11 +22,7 @@ export function Contact() {
   const getMessageText = () => {
     let text = `Halo tim S-TechX,\n`;
     text += `Perkenalkan saya : ${name || "-"}\n`;
-    
-    if (company) {
-      text += `Dari perusahaan atau bisnis : ${company}\n`;
-    }
-    
+    text += `Dari perusahaan atau bisnis : ${company || "-"}\n`;
     text += `Tujuan / Keperluan : ${purpose}\n\n`;
     
     if (message) {
