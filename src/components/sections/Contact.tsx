@@ -35,7 +35,7 @@ export function Contact() {
     let text = `Halo tim S-TechX,\n`;
     text += `Perkenalkan saya : ${name}\n`;
     text += `No. WhatsApp : ${whatsapp}\n`;
-    text += `Dari perusahaan atau bisnis : ${company || "-"}\n`;
+    text += `Perusahaan : ${company}\n`;
     text += `Tujuan / Keperluan : ${purpose}\n\n`;
     text += `Detail pesan :\n${message}\n\n`;
     text += `Untuk detail selengkapnya, mungkin kita bisa bertemu untuk berdiskusi lebih lanjut.\nTerima kasih.`;
