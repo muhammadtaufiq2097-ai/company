@@ -59,6 +59,7 @@ export function Contact() {
         body: JSON.stringify({
             access_key: "c6315c83-b75b-418a-b62e-f4f1f6c4a1f2",
             subject: `Pesan baru dari ${name} di Website S-TechX`,
+            from_name: "S-TechX Notifikasi",
             Nama: name,
             Email: email,
             Perusahaan: company || "-",
