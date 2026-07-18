@@ -188,8 +188,8 @@ export function Contact() {
                         className="w-full bg-gray-900 border border-gray-800 text-white focus:ring-primary focus:border-primary h-11 rounded-md px-3 text-sm appearance-none outline-none transition-all duration-200"
                         disabled={isSubmitting}
                       >
-                        <option value="email">Balas via Email</option>
-                        <option value="whatsapp">Balas via WhatsApp</option>
+                        <option value="email">Email</option>
+                        <option value="whatsapp">WhatsApp</option>
                       </select>
                     </div>
 
