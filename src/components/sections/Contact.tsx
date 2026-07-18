@@ -41,6 +41,18 @@ export function Contact() {
       return;
     }
     window.open(`https://wa.me/${ownerWhatsApp}?text=${getMessageText()}`, "_blank");
+    
+    // Tampilkan status sukses dan tutup form
+    setSubmitStatus("success");
+    setTimeout(() => {
+      setSubmitStatus("idle");
+      setIsOpen(false);
+      setName("");
+      setEmail("");
+      setCompany("");
+      setPurpose("");
+      setMessage("");
+    }, 3000);
   };
 
   const handleEmailSubmit = async (e: React.MouseEvent) => {
