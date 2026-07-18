@@ -26,7 +26,7 @@ export function Contact() {
   const getMessageText = () => {
     let text = `Halo tim S-TechX,\n`;
     text += `Perkenalkan saya : ${name}\n`;
-    text += `Email : ${email}\n`;
+    text += `Kontak (Email/WA) : ${email}\n`;
     text += `Dari perusahaan atau bisnis : ${company}\n`;
     text += `Tujuan / Keperluan : ${purpose}\n\n`;
     text += `Detail pesan :\n${message}\n\n`;
@@ -37,7 +37,7 @@ export function Contact() {
   const handleWhatsApp = (e: React.MouseEvent) => {
     e.preventDefault();
     if (!name || !email || !message) {
-      alert("Mohon isi Nama, Email, dan Pesan terlebih dahulu.");
+      alert("Mohon isi Nama, Kontak (Email/WA), dan Pesan terlebih dahulu.");
       return;
     }
     window.open(`https://wa.me/${ownerWhatsApp}?text=${getMessageText()}`, "_blank");
@@ -47,7 +47,7 @@ export function Contact() {
     e.preventDefault();
     
     if (!name || !email || !message) {
-      alert("Mohon isi Nama, Email, dan Pesan terlebih dahulu.");
+      alert("Mohon isi Nama, Kontak (Email/WA), dan Pesan terlebih dahulu.");
       return;
     }
 
@@ -66,7 +66,7 @@ export function Contact() {
             subject: `Pesan baru dari ${name} di Website S-TechX`,
             from_name: "S-TechX Notifikasi",
             Nama: name,
-            Email: email,
+            "Kontak (Email/WA)": email,
             Perusahaan: company || "-",
             Tujuan: purpose || "-",
             Pesan: message,
@@ -160,10 +160,9 @@ export function Contact() {
                     </div>
 
                     <div className="space-y-1.5">
-                      <label className="text-xs font-medium text-gray-400 ml-1">Alamat Email <span className="text-red-500">*</span></label>
+                      <label className="text-xs font-medium text-gray-400 ml-1">Email / No. WhatsApp <span className="text-red-500">*</span></label>
                       <Input 
-                        type="email"
-                        placeholder="email@anda.com" 
+                        placeholder="email@anda.com atau 0812..." 
                         value={email}
                         onChange={(e) => setEmail(e.target.value)}
                         className="bg-gray-900 border-gray-800 text-white placeholder:text-gray-600 focus-visible:ring-primary h-11"
