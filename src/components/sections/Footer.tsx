@@ -6,7 +6,7 @@ export function Footer() {
   return (
     <footer className="bg-black pt-20 pb-10 border-t border-gray-800">
       <div className="container mx-auto px-4">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12 mb-16">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
           <div className="lg:col-span-2">
             <div className="flex items-center gap-2 mb-6">
               <div className="relative w-10 h-10 rounded-full overflow-hidden border border-gray-700">
@@ -47,6 +47,25 @@ export function Footer() {
                 </li>
               ))}
             </ul>
+          </div>
+          
+          <div>
+            <h4 className="text-white font-semibold text-lg mb-6">Lokasi Kami</h4>
+            <div className="w-full h-40 rounded-xl overflow-hidden border border-gray-800 shadow-lg relative group">
+              <iframe 
+                src="https://maps.google.com/maps?q=Ezrat%20on-line%20sembako&t=&z=17&ie=UTF8&iwloc=&output=embed" 
+                width="100%" 
+                height="100%" 
+                style={{ border: 0 }} 
+                allowFullScreen={false} 
+                loading="lazy" 
+                referrerPolicy="no-referrer-when-downgrade"
+                className="absolute inset-0 grayscale contrast-125 opacity-60 transition-all duration-500 group-hover:grayscale-0 group-hover:opacity-100"
+              ></iframe>
+            </div>
+            <p className="text-gray-500 text-sm mt-4">
+              Kota Tangerang Selatan, Banten, Indonesia
+            </p>
           </div>
 
         </div>

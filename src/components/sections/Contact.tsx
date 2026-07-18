@@ -72,20 +72,7 @@ export function Contact() {
                   Kirim Email ke Kami
                 </Button>
                 
-                {/* Google Maps Embed */}
-                <div className="mt-3 w-full h-44 rounded-xl overflow-hidden border border-white/10 shadow-inner relative group">
-                  <div className="absolute inset-0 bg-black/10 group-hover:bg-transparent transition-colors duration-500 pointer-events-none z-10" />
-                  <iframe 
-                    src="https://maps.google.com/maps?q=Ezrat%20on-line%20sembako&t=&z=17&ie=UTF8&iwloc=&output=embed" 
-                    width="100%" 
-                    height="100%" 
-                    style={{ border: 0 }} 
-                    allowFullScreen={false} 
-                    loading="lazy" 
-                    referrerPolicy="no-referrer-when-downgrade"
-                    className="absolute inset-0 transition-transform duration-700 group-hover:scale-105"
-                  ></iframe>
-                </div>
+
               </div>
             </div>
           </motion.div>
