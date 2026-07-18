@@ -45,15 +45,19 @@ export function Footer() {
                 const targetId = `#${item === 'Beranda' ? 'home' : item === 'Tentang Kami' ? 'about' : item === 'Layanan' ? 'solutions' : item === 'Portofolio' ? 'portfolio' : 'faq'}`;
                 return (
                   <li key={item}>
-                    <button 
+                    <a 
+                      href="javascript:void(0)"
                       onClick={(e) => {
                         e.preventDefault();
-                        document.querySelector(targetId)?.scrollIntoView({ behavior: 'smooth' });
+                        const el = document.getElementById(targetId.substring(1));
+                        if (el) {
+                          window.scrollTo({ top: el.getBoundingClientRect().top + window.scrollY, behavior: 'smooth' });
+                        }
                       }}
                       className="text-gray-400 hover:text-primary transition-colors cursor-pointer text-left"
                     >
                       {item}
-                    </button>
+                    </a>
                   </li>
                 );
               })}

@@ -72,10 +72,14 @@ export function Navbar() {
       )}
     >
       <div className="container mx-auto px-4 md:px-8 flex items-center justify-between">
-        <button 
+        <a 
+          href="javascript:void(0)"
           onClick={(e) => {
             e.preventDefault();
-            document.querySelector("#home")?.scrollIntoView({ behavior: "smooth" });
+            const el = document.getElementById("home");
+            if (el) {
+              window.scrollTo({ top: el.getBoundingClientRect().top + window.scrollY, behavior: 'smooth' });
+            }
           }}
           className="flex items-center gap-2 cursor-pointer"
         >
@@ -83,18 +87,23 @@ export function Navbar() {
             <Image src="/images/logo.jpg" alt="S-TechX Logo" fill sizes="40px" className="object-cover" />
           </div>
           <span className="font-bold text-xl text-white tracking-wider">S-TechX</span>
-        </button>
+        </a>
 
         {/* Desktop Nav */}
         <div className="hidden lg:flex items-center gap-6">
           {navLinks.map((link) => {
             const isActive = activeSection === link.href.substring(1);
             return (
-              <button
+              <a
                 key={link.name}
+                href="javascript:void(0)"
                 onClick={(e) => {
                   e.preventDefault();
-                  document.querySelector(link.href)?.scrollIntoView({ behavior: "smooth" });
+                  const targetId = link.href.substring(1);
+                  const el = document.getElementById(targetId);
+                  if (el) {
+                    window.scrollTo({ top: el.getBoundingClientRect().top + window.scrollY, behavior: 'smooth' });
+                  }
                 }}
                 className={cn(
                   "text-sm font-medium transition-colors relative group cursor-pointer",
@@ -108,7 +117,7 @@ export function Navbar() {
                     isActive ? "w-full" : "w-0 group-hover:w-full"
                   )} 
                 />
-              </button>
+              </a>
             );
           })}
         </div>
@@ -136,8 +145,9 @@ export function Navbar() {
               {navLinks.map((link) => {
                 const isActive = activeSection === link.href.substring(1);
                 return (
-                  <button
+                  <a
                     key={link.name}
+                    href="javascript:void(0)"
                     className={cn(
                       "text-base font-medium transition-colors relative group w-fit pb-1 text-left cursor-pointer",
                       isActive ? "text-primary" : "text-gray-300 hover:text-primary"
@@ -146,9 +156,10 @@ export function Navbar() {
                       e.preventDefault();
                       setMobileMenuOpen(false);
                       setTimeout(() => {
-                        const target = document.querySelector(link.href);
-                        if (target) {
-                          target.scrollIntoView({ behavior: 'smooth' });
+                        const targetId = link.href.substring(1);
+                        const el = document.getElementById(targetId);
+                        if (el) {
+                          window.scrollTo({ top: el.getBoundingClientRect().top + window.scrollY, behavior: 'smooth' });
                         }
                       }, 100);
                     }}
@@ -160,7 +171,7 @@ export function Navbar() {
                         isActive ? "w-full" : "w-0 group-hover:w-full"
                       )} 
                     />
-                  </button>
+                  </a>
                 );
               })}
             </div>
