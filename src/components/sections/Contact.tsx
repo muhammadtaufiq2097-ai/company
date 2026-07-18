@@ -21,8 +21,11 @@ export function Contact() {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitStatus, setSubmitStatus] = useState<"idle" | "success" | "error">("idle");
 
-  const isEmailValid = name.trim() !== "" && email.trim() !== "" && company.trim() !== "" && purpose.trim() !== "" && message.trim() !== "";
-  const isWaValid = name.trim() !== "" && whatsapp.trim() !== "" && company.trim() !== "" && purpose.trim() !== "" && message.trim() !== "";
+  const isValidEmailFormat = email.trim() !== "" && email.toLowerCase().includes("@gmail.com");
+  const isValidWaFormat = whatsapp.trim() !== "" && whatsapp.startsWith("08") && /^\d+$/.test(whatsapp);
+
+  const isEmailValid = name.trim() !== "" && isValidEmailFormat && company.trim() !== "" && purpose.trim() !== "" && message.trim() !== "";
+  const isWaValid = name.trim() !== "" && isValidWaFormat && company.trim() !== "" && purpose.trim() !== "" && message.trim() !== "";
 
   // Data Kontak Pemilik
   const ownerWhatsApp = "62895359530117"; // Format 62 tanpa + atau 0 di depan
@@ -201,9 +204,12 @@ export function Contact() {
                           placeholder="email@anda.com" 
                           value={email}
                           onChange={(e) => setEmail(e.target.value)}
-                          className="bg-gray-900 border-gray-800 text-white placeholder:text-gray-600 focus-visible:ring-primary h-11"
+                          className={`bg-gray-900 text-white placeholder:text-gray-600 focus-visible:ring-primary h-11 ${email.trim() !== "" && !isValidEmailFormat ? "border-red-500 focus-visible:ring-red-500" : "border-gray-800"}`}
                           disabled={isSubmitting}
                         />
+                        {email.trim() !== "" && !isValidEmailFormat && (
+                          <p className="text-red-500 text-[10px] mt-1 ml-1">Email harus menggunakan @gmail.com</p>
+                        )}
                       </div>
                     ) : (
                       <div className="space-y-1.5 animate-in fade-in slide-in-from-top-1 duration-200">
@@ -213,9 +219,12 @@ export function Contact() {
                           placeholder="Contoh: 0812..." 
                           value={whatsapp}
                           onChange={(e) => setWhatsapp(e.target.value)}
-                          className="bg-gray-900 border-gray-800 text-white placeholder:text-gray-600 focus-visible:ring-primary h-11"
+                          className={`bg-gray-900 text-white placeholder:text-gray-600 focus-visible:ring-primary h-11 ${whatsapp.trim() !== "" && !isValidWaFormat ? "border-red-500 focus-visible:ring-red-500" : "border-gray-800"}`}
                           disabled={isSubmitting}
                         />
+                        {whatsapp.trim() !== "" && !isValidWaFormat && (
+                          <p className="text-red-500 text-[10px] mt-1 ml-1">Nomor WA harus diawali "08" dan hanya berisi angka.</p>
+                        )}
                       </div>
                     )}
                     
