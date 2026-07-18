@@ -72,34 +72,32 @@ export function Navbar() {
       )}
     >
       <div className="container mx-auto px-4 md:px-8 flex items-center justify-between">
-        <a 
-          href="#home" 
+        <button 
           onClick={(e) => {
             e.preventDefault();
             document.querySelector("#home")?.scrollIntoView({ behavior: "smooth" });
           }}
-          className="flex items-center gap-2"
+          className="flex items-center gap-2 cursor-pointer"
         >
           <div className="relative w-10 h-10 rounded-full overflow-hidden border-2 border-primary">
             <Image src="/images/logo.jpg" alt="S-TechX Logo" fill sizes="40px" className="object-cover" />
           </div>
           <span className="font-bold text-xl text-white tracking-wider">S-TechX</span>
-        </a>
+        </button>
 
         {/* Desktop Nav */}
         <div className="hidden lg:flex items-center gap-6">
           {navLinks.map((link) => {
             const isActive = activeSection === link.href.substring(1);
             return (
-              <a
+              <button
                 key={link.name}
-                href={link.href}
                 onClick={(e) => {
                   e.preventDefault();
                   document.querySelector(link.href)?.scrollIntoView({ behavior: "smooth" });
                 }}
                 className={cn(
-                  "text-sm font-medium transition-colors relative group",
+                  "text-sm font-medium transition-colors relative group cursor-pointer",
                   isActive ? "text-primary" : "text-gray-300 hover:text-primary"
                 )}
               >
@@ -110,7 +108,7 @@ export function Navbar() {
                     isActive ? "w-full" : "w-0 group-hover:w-full"
                   )} 
                 />
-              </a>
+              </button>
             );
           })}
         </div>
@@ -138,11 +136,10 @@ export function Navbar() {
               {navLinks.map((link) => {
                 const isActive = activeSection === link.href.substring(1);
                 return (
-                  <a
+                  <button
                     key={link.name}
-                    href={link.href}
                     className={cn(
-                      "text-base font-medium transition-colors relative group w-fit pb-1",
+                      "text-base font-medium transition-colors relative group w-fit pb-1 text-left cursor-pointer",
                       isActive ? "text-primary" : "text-gray-300 hover:text-primary"
                     )}
                     onClick={(e) => {
@@ -163,7 +160,7 @@ export function Navbar() {
                         isActive ? "w-full" : "w-0 group-hover:w-full"
                       )} 
                     />
-                  </a>
+                  </button>
                 );
               })}
             </div>

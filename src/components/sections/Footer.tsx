@@ -43,16 +43,15 @@ export function Footer() {
                 const targetId = `#${item === 'Beranda' ? 'home' : item === 'Tentang Kami' ? 'about' : item === 'Layanan' ? 'solutions' : item === 'Portofolio' ? 'portfolio' : 'faq'}`;
                 return (
                   <li key={item}>
-                    <a 
-                      href={targetId} 
+                    <button 
                       onClick={(e) => {
                         e.preventDefault();
                         document.querySelector(targetId)?.scrollIntoView({ behavior: 'smooth' });
                       }}
-                      className="text-gray-400 hover:text-primary transition-colors cursor-pointer"
+                      className="text-gray-400 hover:text-primary transition-colors cursor-pointer text-left"
                     >
                       {item}
-                    </a>
+                    </button>
                   </li>
                 );
               })}
