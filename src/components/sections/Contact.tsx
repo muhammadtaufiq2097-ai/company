@@ -21,7 +21,7 @@ export function Contact() {
 
   // Data Kontak Pemilik
   const ownerWhatsApp = "62895359530117"; // Format 62 tanpa + atau 0 di depan
-  const ownerEmail = "taufiqq882@gmail.com";
+  const ownerEmail = "taufiqq884@gmail.com";
 
   const getMessageText = () => {
     let text = `Halo tim S-TechX,\n`;
