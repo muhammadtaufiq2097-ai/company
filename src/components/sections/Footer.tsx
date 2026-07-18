@@ -42,14 +42,14 @@ export function Footer() {
             <h4 className="text-white font-semibold text-lg mb-6">Tautan Cepat</h4>
             <ul className="space-y-4">
               {['Beranda', 'Tentang Kami', 'Layanan', 'Portofolio', 'FAQ'].map((item) => {
-                const targetId = `#${item === 'Beranda' ? 'home' : item === 'Tentang Kami' ? 'about' : item === 'Layanan' ? 'solutions' : item === 'Portofolio' ? 'portfolio' : 'faq'}`;
+                const targetId = item === 'Beranda' ? 'home' : item === 'Tentang Kami' ? 'about' : item === 'Layanan' ? 'solutions' : item === 'Portofolio' ? 'portfolio' : 'faq';
                 return (
                   <li key={item}>
                     <a 
                       href="javascript:void(0)"
                       onClick={(e) => {
                         e.preventDefault();
-                        const el = document.getElementById(targetId.substring(1));
+                        const el = document.getElementById(targetId);
                         if (el) {
                           window.scrollTo({ top: el.getBoundingClientRect().top + window.scrollY, behavior: 'smooth' });
                         }

@@ -10,13 +10,13 @@ import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
 
 const navLinks = [
-  { name: "Beranda", href: "#home" },
-  { name: "Tentang Kami", href: "#about" },
-  { name: "Solusi", href: "#solutions" },
-  { name: "Teknologi", href: "#technologies" },
-  { name: "Machine Learning", href: "#machine-learning" },
-  { name: "Portofolio", href: "#portfolio" },
-  { name: "FAQ", href: "#faq" },
+  { name: "Beranda", href: "home" },
+  { name: "Tentang Kami", href: "about" },
+  { name: "Solusi", href: "solutions" },
+  { name: "Teknologi", href: "technologies" },
+  { name: "Machine Learning", href: "machine-learning" },
+  { name: "Portofolio", href: "portfolio" },
+  { name: "FAQ", href: "faq" },
 ];
 
 export function Navbar() {
@@ -33,7 +33,7 @@ export function Navbar() {
     // Track active section using Intersection Observer
     const observers: IntersectionObserver[] = [];
     navLinks.forEach((link) => {
-      const targetId = link.href.substring(1);
+      const targetId = link.href;
       const element = document.getElementById(targetId);
       
       if (element) {
@@ -92,14 +92,14 @@ export function Navbar() {
         {/* Desktop Nav */}
         <div className="hidden lg:flex items-center gap-6">
           {navLinks.map((link) => {
-            const isActive = activeSection === link.href.substring(1);
+            const isActive = activeSection === link.href;
             return (
               <a
                 key={link.name}
                 href="javascript:void(0)"
                 onClick={(e) => {
                   e.preventDefault();
-                  const targetId = link.href.substring(1);
+                  const targetId = link.href;
                   const el = document.getElementById(targetId);
                   if (el) {
                     window.scrollTo({ top: el.getBoundingClientRect().top + window.scrollY, behavior: 'smooth' });
@@ -143,7 +143,7 @@ export function Navbar() {
           >
             <div className="py-4 px-4 flex flex-col gap-4">
               {navLinks.map((link) => {
-                const isActive = activeSection === link.href.substring(1);
+                const isActive = activeSection === link.href;
                 return (
                   <a
                     key={link.name}
@@ -156,7 +156,7 @@ export function Navbar() {
                       e.preventDefault();
                       setMobileMenuOpen(false);
                       setTimeout(() => {
-                        const targetId = link.href.substring(1);
+                        const targetId = link.href;
                         const el = document.getElementById(targetId);
                         if (el) {
                           window.scrollTo({ top: el.getBoundingClientRect().top + window.scrollY, behavior: 'smooth' });
