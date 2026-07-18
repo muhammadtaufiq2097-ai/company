@@ -18,21 +18,21 @@ export function Footer() {
               Mengubah Ide Menjadi Solusi Cerdas.
             </p>
             <div className="flex gap-4">
-              <Link href="#" className="w-10 h-10 rounded-full bg-gray-900 flex items-center justify-center text-gray-400 hover:text-white hover:bg-primary transition-colors">
+              <button onClick={(e) => e.preventDefault()} className="w-10 h-10 rounded-full bg-gray-900 flex items-center justify-center text-gray-400 hover:text-white hover:bg-primary transition-colors">
                 <FaGithub size={20} />
-              </Link>
-              <Link href="#" className="w-10 h-10 rounded-full bg-gray-900 flex items-center justify-center text-gray-400 hover:text-white hover:bg-[#0077B5] transition-colors">
+              </button>
+              <button onClick={(e) => e.preventDefault()} className="w-10 h-10 rounded-full bg-gray-900 flex items-center justify-center text-gray-400 hover:text-white hover:bg-[#0077B5] transition-colors">
                 <FaLinkedin size={20} />
-              </Link>
-              <Link href="#" className="w-10 h-10 rounded-full bg-gray-900 flex items-center justify-center text-gray-400 hover:text-white hover:bg-[#E4405F] transition-colors">
+              </button>
+              <button onClick={(e) => e.preventDefault()} className="w-10 h-10 rounded-full bg-gray-900 flex items-center justify-center text-gray-400 hover:text-white hover:bg-[#E4405F] transition-colors">
                 <FaInstagram size={20} />
-              </Link>
-              <Link href="#" className="w-10 h-10 rounded-full bg-gray-900 flex items-center justify-center text-gray-400 hover:text-white hover:bg-[#1877F2] transition-colors">
+              </button>
+              <button onClick={(e) => e.preventDefault()} className="w-10 h-10 rounded-full bg-gray-900 flex items-center justify-center text-gray-400 hover:text-white hover:bg-[#1877F2] transition-colors">
                 <FaFacebook size={20} />
-              </Link>
-              <Link href="#" className="w-10 h-10 rounded-full bg-gray-900 flex items-center justify-center text-gray-400 hover:text-white hover:bg-[#FF0000] transition-colors">
+              </button>
+              <button onClick={(e) => e.preventDefault()} className="w-10 h-10 rounded-full bg-gray-900 flex items-center justify-center text-gray-400 hover:text-white hover:bg-[#FF0000] transition-colors">
                 <FaYoutube size={20} />
-              </Link>
+              </button>
             </div>
           </div>
 
