@@ -21,7 +21,7 @@ export function Contact() {
 
   // Data Kontak Pemilik
   const ownerWhatsApp = "62895359530117"; // Format 62 tanpa + atau 0 di depan
-  const ownerEmail = "taufiqq884@gmail.com";
+  const ownerEmail = "salahudinkoliq10@gmail.com";
 
   const getMessageText = () => {
     let text = `Halo tim S-TechX,\n`;
@@ -62,7 +62,7 @@ export function Contact() {
             'Accept': 'application/json'
         },
         body: JSON.stringify({
-            access_key: "c6315c83-b75b-418a-b62e-f4f1f6c4a1f2",
+            access_key: "a9258701-7783-4e3a-bc83-ad7ceddc327e",
             subject: `Pesan baru dari ${name} di Website S-TechX`,
             from_name: "S-TechX Notifikasi",
             Nama: name,
