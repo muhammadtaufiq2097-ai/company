@@ -142,6 +142,7 @@ export function Contact() {
               </div>
             </div>
           </motion.div>
+          </>
         )}
       </AnimatePresence>
     </>
