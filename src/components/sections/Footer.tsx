@@ -70,14 +70,10 @@ export function Footer() {
 
         </div>
 
-        <div className="border-t border-gray-800 pt-8 flex flex-col md:flex-row items-center justify-between gap-4">
-          <p className="text-gray-500 text-sm">
+        <div className="border-t border-gray-800 pt-8 flex items-center justify-center">
+          <p className="text-gray-500 text-sm text-center">
             © {new Date().getFullYear()} S-TechX. Hak Cipta Dilindungi.
           </p>
-          <div className="flex gap-6 text-sm text-gray-500">
-            <Link href="#" className="hover:text-white transition-colors">Kebijakan Privasi</Link>
-            <Link href="#" className="hover:text-white transition-colors">Syarat dan Ketentuan</Link>
-          </div>
         </div>
       </div>
     </footer>
