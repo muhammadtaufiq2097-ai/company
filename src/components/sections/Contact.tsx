@@ -12,6 +12,7 @@ export function Contact() {
   const [isOpen, setIsOpen] = useState(false);
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
+  const [whatsapp, setWhatsapp] = useState("");
   const [company, setCompany] = useState("");
   const [purpose, setPurpose] = useState("");
   const [message, setMessage] = useState("");
@@ -19,7 +20,8 @@ export function Contact() {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitStatus, setSubmitStatus] = useState<"idle" | "success" | "error">("idle");
 
-  const isFormValid = name.trim() !== "" && email.trim() !== "" && purpose.trim() !== "" && message.trim() !== "";
+  const isEmailValid = name.trim() !== "" && email.trim() !== "" && purpose.trim() !== "" && message.trim() !== "";
+  const isWaValid = name.trim() !== "" && whatsapp.trim() !== "" && purpose.trim() !== "" && message.trim() !== "";
 
   // Data Kontak Pemilik
   const ownerWhatsApp = "62895359530117"; // Format 62 tanpa + atau 0 di depan
@@ -28,8 +30,9 @@ export function Contact() {
   const getMessageText = () => {
     let text = `Halo tim S-TechX,\n`;
     text += `Perkenalkan saya : ${name}\n`;
-    text += `Kontak (Email/WA) : ${email}\n`;
-    text += `Dari perusahaan atau bisnis : ${company}\n`;
+    text += `Alamat Email : ${email || "-"}\n`;
+    text += `No. WhatsApp : ${whatsapp || "-"}\n`;
+    text += `Dari perusahaan atau bisnis : ${company || "-"}\n`;
     text += `Tujuan / Keperluan : ${purpose}\n\n`;
     text += `Detail pesan :\n${message}\n\n`;
     text += `Untuk detail selengkapnya, mungkin kita bisa bertemu untuk berdiskusi lebih lanjut.\nTerima kasih.`;
@@ -38,8 +41,8 @@ export function Contact() {
 
   const handleWhatsApp = (e: React.MouseEvent) => {
     e.preventDefault();
-    if (!isFormValid) {
-      alert("Mohon isi semua kolom yang wajib (*).");
+    if (!isWaValid) {
+      alert("Mohon isi Nama, No. WhatsApp, Tujuan, dan Pesan terlebih dahulu.");
       return;
     }
     window.open(`https://wa.me/${ownerWhatsApp}?text=${getMessageText()}`, "_blank");
@@ -51,6 +54,7 @@ export function Contact() {
       setIsOpen(false);
       setName("");
       setEmail("");
+      setWhatsapp("");
       setCompany("");
       setPurpose("");
       setMessage("");
@@ -60,8 +64,8 @@ export function Contact() {
   const handleEmailSubmit = async (e: React.MouseEvent) => {
     e.preventDefault();
     
-    if (!isFormValid) {
-      alert("Mohon isi semua kolom yang wajib (*).");
+    if (!isEmailValid) {
+      alert("Mohon isi Nama, Alamat Email, Tujuan, dan Pesan terlebih dahulu.");
       return;
     }
 
@@ -80,7 +84,8 @@ export function Contact() {
             subject: `Pesan baru dari ${name} di Website S-TechX`,
             from_name: "S-TechX Notifikasi",
             Nama: name,
-            "Kontak (Email/WA)": email,
+            Email: email || "-",
+            "No WhatsApp": whatsapp || "-",
             Perusahaan: company || "-",
             Tujuan: purpose || "-",
             Pesan: message,
@@ -94,6 +99,7 @@ export function Contact() {
           setIsOpen(false);
           setName("");
           setEmail("");
+          setWhatsapp("");
           setCompany("");
           setPurpose("");
           setMessage("");
@@ -174,11 +180,24 @@ export function Contact() {
                     </div>
 
                     <div className="space-y-1.5">
-                      <label className="text-xs font-medium text-gray-400 ml-1">Email / No. WhatsApp <span className="text-red-500">*</span></label>
+                      <label className="text-xs font-medium text-gray-400 ml-1">Alamat Email <span className="text-gray-600 font-normal italic">(Wajib jika kirim via Email)</span></label>
                       <Input 
-                        placeholder="email@anda.com atau 0812..." 
+                        type="email"
+                        placeholder="email@anda.com" 
                         value={email}
                         onChange={(e) => setEmail(e.target.value)}
+                        className="bg-gray-900 border-gray-800 text-white placeholder:text-gray-600 focus-visible:ring-primary h-11"
+                        disabled={isSubmitting}
+                      />
+                    </div>
+                    
+                    <div className="space-y-1.5">
+                      <label className="text-xs font-medium text-gray-400 ml-1">No. WhatsApp <span className="text-gray-600 font-normal italic">(Wajib jika kirim via WA)</span></label>
+                      <Input 
+                        type="tel"
+                        placeholder="Contoh: 0812..." 
+                        value={whatsapp}
+                        onChange={(e) => setWhatsapp(e.target.value)}
                         className="bg-gray-900 border-gray-800 text-white placeholder:text-gray-600 focus-visible:ring-primary h-11"
                         disabled={isSubmitting}
                       />
@@ -227,8 +246,8 @@ export function Contact() {
                   <div className="flex flex-col gap-3 mt-6">
                     <Button 
                       onClick={handleEmailSubmit}
-                      disabled={isSubmitting || !isFormValid}
-                      className={`w-full bg-primary text-white rounded-xl h-12 text-sm font-medium flex items-center justify-center gap-2.5 transition-all duration-300 shadow-lg shadow-primary/20 ${isSubmitting || !isFormValid ? "opacity-50 cursor-not-allowed" : "hover:bg-blue-600 hover:scale-[1.02] active:scale-[0.98]"}`}
+                      disabled={isSubmitting || !isEmailValid}
+                      className={`w-full bg-primary text-white rounded-xl h-12 text-sm font-medium flex items-center justify-center gap-2.5 transition-all duration-300 shadow-lg shadow-primary/20 ${isSubmitting || !isEmailValid ? "opacity-50 cursor-not-allowed" : "hover:bg-blue-600 hover:scale-[1.02] active:scale-[0.98]"}`}
                     >
                       {isSubmitting ? (
                         <>
@@ -249,8 +268,8 @@ export function Contact() {
                     </div>
                     <Button 
                       onClick={handleWhatsApp}
-                      disabled={isSubmitting || !isFormValid}
-                      className={`w-full bg-[#25D366] text-white rounded-xl h-12 text-sm font-medium flex items-center justify-center gap-2.5 transition-all duration-300 shadow-lg shadow-[#25D366]/10 ${isSubmitting || !isFormValid ? "opacity-50 cursor-not-allowed" : "hover:bg-[#20b858] hover:scale-[1.02] active:scale-[0.98]"}`}
+                      disabled={isSubmitting || !isWaValid}
+                      className={`w-full bg-[#25D366] text-white rounded-xl h-12 text-sm font-medium flex items-center justify-center gap-2.5 transition-all duration-300 shadow-lg shadow-[#25D366]/10 ${isSubmitting || !isWaValid ? "opacity-50 cursor-not-allowed" : "hover:bg-[#20b858] hover:scale-[1.02] active:scale-[0.98]"}`}
                     >
                       <FaWhatsapp className="w-[18px] h-[18px]" />
                       Kirim via WhatsApp
