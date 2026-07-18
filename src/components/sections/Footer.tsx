@@ -46,11 +46,12 @@ export function Footer() {
                 return (
                   <li key={item}>
                     <a 
-                      href={targetId}
+                      href={`/${targetId}`}
                       onClick={(e) => {
                         e.preventDefault();
                         const el = document.getElementById(targetId);
                         if (el) {
+                          window.history.pushState(null, '', `/${targetId}`);
                           window.scrollTo({ top: el.getBoundingClientRect().top + window.scrollY, behavior: 'smooth' });
                         }
                       }}

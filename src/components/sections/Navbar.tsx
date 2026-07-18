@@ -73,11 +73,12 @@ export function Navbar() {
     >
       <div className="container mx-auto px-4 md:px-8 flex items-center justify-between">
         <a 
-          href="home"
+          href="/home"
           onClick={(e) => {
             e.preventDefault();
             const el = document.getElementById("home");
             if (el) {
+              window.history.pushState(null, '', '/home');
               window.scrollTo({ top: el.getBoundingClientRect().top + window.scrollY, behavior: 'smooth' });
             }
           }}
@@ -96,12 +97,13 @@ export function Navbar() {
             return (
               <a
                 key={link.name}
-                href={link.href}
+                href={`/${link.href}`}
                 onClick={(e) => {
                   e.preventDefault();
                   const targetId = link.href;
                   const el = document.getElementById(targetId);
                   if (el) {
+                    window.history.pushState(null, '', `/${targetId}`);
                     window.scrollTo({ top: el.getBoundingClientRect().top + window.scrollY, behavior: 'smooth' });
                   }
                 }}
@@ -147,7 +149,7 @@ export function Navbar() {
                 return (
                   <a
                     key={link.name}
-                    href={link.href}
+                    href={`/${link.href}`}
                     className={cn(
                       "text-base font-medium transition-colors relative group w-fit pb-1 text-left cursor-pointer",
                       isActive ? "text-primary" : "text-gray-300 hover:text-primary"
@@ -159,6 +161,7 @@ export function Navbar() {
                         const targetId = link.href;
                         const el = document.getElementById(targetId);
                         if (el) {
+                          window.history.pushState(null, '', `/${targetId}`);
                           window.scrollTo({ top: el.getBoundingClientRect().top + window.scrollY, behavior: 'smooth' });
                         }
                       }, 100);
