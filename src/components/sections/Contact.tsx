@@ -33,7 +33,7 @@ export function Contact() {
       text += `Detail pesan :\n${message}\n\n`;
     }
     
-    text += `Untuk detail selengkapnya, mungkin kita bisa menjadwalkan waktu untuk bertemu atau berdiskusi lebih lanjut.\nTerima kasih.`;
+    text += `Untuk detail selengkapnya, mungkin kita bisa bertemu untuk berdiskusi lebih lanjut.\nTerima kasih.`;
     
     return encodeURIComponent(text);
   };
