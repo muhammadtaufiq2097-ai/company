@@ -21,16 +21,11 @@ export function Contact() {
 
   const getMessageText = () => {
     let text = `Halo tim S-TechX,\n`;
-    text += `Perkenalkan saya : ${name || "-"}\n`;
-    text += `Dari perusahaan atau bisnis : ${company || "-"}\n`;
+    text += `Perkenalkan saya : ${name}\n`;
+    text += `Dari perusahaan atau bisnis : ${company}\n`;
     text += `Tujuan / Keperluan : ${purpose}\n\n`;
-    
-    if (message) {
-      text += `Detail pesan :\n${message}\n\n`;
-    }
-    
+    text += `Detail pesan :\n${message}\n\n`;
     text += `Untuk detail selengkapnya, mungkin kita bisa bertemu untuk berdiskusi lebih lanjut.\nTerima kasih.`;
-    
     return encodeURIComponent(text);
   };
 
