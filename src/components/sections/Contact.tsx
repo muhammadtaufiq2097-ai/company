@@ -12,7 +12,7 @@ export function Contact() {
   const [isOpen, setIsOpen] = useState(false);
   const [name, setName] = useState("");
   const [company, setCompany] = useState("");
-  const [purpose, setPurpose] = useState("Pengajuan Kerja Sama");
+  const [purpose, setPurpose] = useState("");
   const [message, setMessage] = useState("");
 
   // Data Kontak Pemilik
@@ -94,18 +94,12 @@ export function Contact() {
 
                 <div className="space-y-1.5">
                   <label className="text-xs font-medium text-gray-400 ml-1">Tujuan / Keperluan</label>
-                  <select 
+                  <Input 
+                    placeholder="Contoh: Pengajuan Kerja Sama / Pembuatan Web" 
                     value={purpose}
                     onChange={(e) => setPurpose(e.target.value)}
-                    className="flex h-11 w-full rounded-md border border-gray-800 bg-gray-900 px-3 py-2 text-sm text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary disabled:cursor-not-allowed disabled:opacity-50 appearance-none"
-                    style={{ backgroundImage: 'url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns=\'http://www.w3.org/2000/svg\' viewBox=\'0 0 24 24\' fill=\'none\' stroke=\'white\' stroke-width=\'2\' stroke-linecap=\'round\' stroke-linejoin=\'round\'%3e%3cpolyline points=\'6 9 12 15 18 9\'/%3e%3c/svg%3e")', backgroundRepeat: 'no-repeat', backgroundPosition: 'right 12px center', backgroundSize: '16px' }}
-                  >
-                    <option value="Pengajuan Kerja Sama">Pengajuan Kerja Sama</option>
-                    <option value="Pembuatan Website / Aplikasi">Pembuatan Website / Aplikasi</option>
-                    <option value="Tanya Layanan AI">Tanya Layanan AI</option>
-                    <option value="Konsultasi Proyek IT">Konsultasi Proyek IT</option>
-                    <option value="Lainnya">Lainnya</option>
-                  </select>
+                    className="bg-gray-900 border-gray-800 text-white placeholder:text-gray-600 focus-visible:ring-primary h-11"
+                  />
                 </div>
                 
                 <div className="space-y-1.5">
