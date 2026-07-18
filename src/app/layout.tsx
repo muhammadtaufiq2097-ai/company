@@ -30,6 +30,9 @@ export const metadata: Metadata = {
     description: "Solusi digital AI, Machine Learning, Web & Mobile Development terbaik untuk bisnis Anda.",
     images: ["/images/logo.jpg"],
   },
+  verification: {
+    google: "Ey8vkiY7m_y_yXRs6SjsEpg7e7dL3Xk3hnfHketvY_A",
+  },
 };
 
 export default function RootLayout({
