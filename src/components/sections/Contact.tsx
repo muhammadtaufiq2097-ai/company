@@ -26,6 +26,7 @@ export function Contact() {
   const getMessageText = () => {
     let text = `Halo tim S-TechX,\n`;
     text += `Perkenalkan saya : ${name}\n`;
+    text += `Email : ${email}\n`;
     text += `Dari perusahaan atau bisnis : ${company}\n`;
     text += `Tujuan / Keperluan : ${purpose}\n\n`;
     text += `Detail pesan :\n${message}\n\n`;
@@ -35,6 +36,10 @@ export function Contact() {
 
   const handleWhatsApp = (e: React.MouseEvent) => {
     e.preventDefault();
+    if (!name || !email || !message) {
+      alert("Mohon isi Nama, Email, dan Pesan terlebih dahulu.");
+      return;
+    }
     window.open(`https://wa.me/${ownerWhatsApp}?text=${getMessageText()}`, "_blank");
   };
 
@@ -235,7 +240,7 @@ export function Contact() {
                       className="w-full bg-[#25D366] hover:bg-[#20b858] hover:scale-[1.02] active:scale-[0.98] text-white rounded-xl h-12 text-sm font-medium flex items-center justify-center gap-2.5 transition-all duration-300 shadow-lg shadow-[#25D366]/10"
                     >
                       <FaWhatsapp className="w-[18px] h-[18px]" />
-                      Lanjutkan ke WhatsApp
+                      Kirim via WhatsApp
                     </Button>
                   </div>
                 </>
