@@ -50,19 +50,20 @@ export function Contact() {
     setSubmitStatus("idle");
 
     try {
-      const response = await fetch(`https://formsubmit.co/ajax/${ownerEmail}`, {
+      const response = await fetch("https://api.web3forms.com/submit", {
         method: "POST",
         headers: { 
             'Content-Type': 'application/json',
             'Accept': 'application/json'
         },
         body: JSON.stringify({
+            access_key: "c6315c83-b75b-418a-b62e-f4f1f6c4a1f2",
+            subject: `Pesan baru dari ${name} di Website S-TechX`,
             Nama: name,
             Email: email,
             Perusahaan: company || "-",
             Tujuan: purpose || "-",
             Pesan: message,
-            _subject: `Pesan baru dari ${name} di Website S-TechX`,
         })
       });
 
