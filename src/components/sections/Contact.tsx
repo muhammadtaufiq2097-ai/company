@@ -30,10 +30,11 @@ export function Contact() {
     text += `Tujuan / Keperluan : ${purpose}\n\n`;
     
     if (message) {
-      text += `Detail pesan :\n${message}`;
-    } else {
-      text += `Apakah kita bisa menjadwalkan waktu untuk berdiskusi lebih lanjut mengenai hal ini?`;
+      text += `Detail pesan :\n${message}\n\n`;
     }
+    
+    text += `Untuk detail selengkapnya, mungkin kita bisa menjadwalkan waktu untuk bertemu atau berdiskusi lebih lanjut.\nTerima kasih.`;
+    
     return encodeURIComponent(text);
   };
 
