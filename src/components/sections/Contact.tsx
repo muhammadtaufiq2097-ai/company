@@ -34,8 +34,7 @@ export function Contact() {
   const getMessageText = () => {
     let text = `Halo tim S-TechX,\n`;
     text += `Perkenalkan saya : ${name}\n`;
-    text += `Alamat Email : ${email || "-"}\n`;
-    text += `No. WhatsApp : ${whatsapp || "-"}\n`;
+    text += `No. WhatsApp : ${whatsapp}\n`;
     text += `Dari perusahaan atau bisnis : ${company || "-"}\n`;
     text += `Tujuan / Keperluan : ${purpose}\n\n`;
     text += `Detail pesan :\n${message}\n\n`;
@@ -88,9 +87,8 @@ export function Contact() {
             subject: `Pesan baru dari ${name} di Website S-TechX`,
             from_name: "S-TechX Notifikasi",
             Nama: name,
-            Email: email || "-",
-            "No WhatsApp": whatsapp || "-",
-            Perusahaan: company || "-",
+            Email: email,
+            Perusahaan: company,
             Tujuan: purpose || "-",
             Pesan: message,
         })
