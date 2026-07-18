@@ -21,8 +21,8 @@ export function Contact() {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitStatus, setSubmitStatus] = useState<"idle" | "success" | "error">("idle");
 
-  const isEmailValid = name.trim() !== "" && email.trim() !== "" && purpose.trim() !== "" && message.trim() !== "";
-  const isWaValid = name.trim() !== "" && whatsapp.trim() !== "" && purpose.trim() !== "" && message.trim() !== "";
+  const isEmailValid = name.trim() !== "" && email.trim() !== "" && company.trim() !== "" && purpose.trim() !== "" && message.trim() !== "";
+  const isWaValid = name.trim() !== "" && whatsapp.trim() !== "" && company.trim() !== "" && purpose.trim() !== "" && message.trim() !== "";
 
   // Data Kontak Pemilik
   const ownerWhatsApp = "62895359530117"; // Format 62 tanpa + atau 0 di depan
@@ -220,7 +220,7 @@ export function Contact() {
                     )}
                     
                     <div className="space-y-1.5">
-                      <label className="text-xs font-medium text-gray-400 ml-1">Perusahaan <span className="text-gray-600 font-normal italic">(Opsional)</span></label>
+                      <label className="text-xs font-medium text-gray-400 ml-1">Perusahaan <span className="text-red-500">*</span></label>
                       <Input 
                         placeholder="Nama perusahaan Anda" 
                         value={company}
