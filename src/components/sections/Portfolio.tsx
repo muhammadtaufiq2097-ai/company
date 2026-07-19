@@ -95,7 +95,12 @@ export function Portfolio() {
                   </div>
                   
                   <CardContent className={`flex flex-col p-8 w-full`}>
-                    <h4 className="text-2xl font-bold text-white mb-3 group-hover:text-primary transition-colors">{project.title}</h4>
+                    <h4 
+                      onClick={() => window.open(project.link, "_blank")}
+                      className="text-2xl font-bold text-white mb-3 group-hover:text-primary hover:underline transition-colors cursor-pointer w-fit"
+                    >
+                      {project.title}
+                    </h4>
                     <p className="text-gray-400 mb-6">{project.description}</p>
                     
                     <div className="flex flex-wrap gap-2 mb-8">
