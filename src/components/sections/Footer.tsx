@@ -76,7 +76,7 @@ export function Footer() {
                 allowFullScreen={false} 
                 loading="lazy" 
                 referrerPolicy="no-referrer-when-downgrade"
-                className="absolute inset-0 grayscale contrast-125 opacity-60 transition-all duration-500 group-hover:grayscale-0 group-hover:opacity-100"
+                className="absolute inset-0 w-full h-full rounded-xl transition-all duration-500"
               ></iframe>
             </div>
             <p className="text-gray-500 text-sm mt-4">
