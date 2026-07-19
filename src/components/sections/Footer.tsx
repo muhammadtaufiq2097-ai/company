@@ -67,7 +67,7 @@ export function Footer() {
           
           <div>
             <h4 className="text-white font-semibold text-lg mb-6">Lokasi Kami</h4>
-            <div className="w-full h-40 rounded-xl overflow-hidden border border-gray-800 shadow-lg relative group transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl hover:shadow-primary/20 hover:border-primary/50 cursor-pointer">
+            <div className="w-full h-40 rounded-xl overflow-hidden border border-gray-800 shadow-lg relative group transition-transform duration-300 hover:scale-105 active:scale-95 cursor-pointer">
               <iframe 
                 src="https://maps.google.com/maps?q=Ezrat%20on-line%20sembako,%20Wanasari,%20Cibitung,%20Bekasi&t=&z=17&ie=UTF8&iwloc=B&output=embed" 
                 width="100%" 
