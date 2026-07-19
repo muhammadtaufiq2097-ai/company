@@ -29,6 +29,17 @@ const nextConfig: NextConfig = {
       },
     ],
   },
+  async rewrites() {
+    return [
+      { source: '/home', destination: '/' },
+      { source: '/about', destination: '/' },
+      { source: '/solutions', destination: '/' },
+      { source: '/technologies', destination: '/' },
+      { source: '/machine-learning', destination: '/' },
+      { source: '/portfolio', destination: '/' },
+      { source: '/faq', destination: '/' },
+    ]
+  },
 };
 
 export default nextConfig;
