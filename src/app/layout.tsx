@@ -9,6 +9,10 @@ export const metadata: Metadata = {
   title: "S-TechX | Transforming Ideas Into Intelligent Solutions",
   description: "S-TechX adalah perusahaan teknologi terkemuka yang berfokus pada AI, Machine Learning, Web & Mobile Development. Solusi digital terbaik untuk bisnis Anda.",
   keywords: ["S-TechX", "AI", "Machine Learning", "Web Development", "Mobile Development", "Software House", "Jasa Pembuatan Website", "Jasa Aplikasi Mobile", "Konsultan IT", "Teknologi"],
+  icons: {
+    icon: '/images/logo.jpg',
+    apple: '/images/logo.jpg',
+  },
   openGraph: {
     title: "S-TechX | Transforming Ideas Into Intelligent Solutions",
     description: "S-TechX adalah perusahaan teknologi terkemuka yang berfokus pada AI, Machine Learning, Web & Mobile Development.",
