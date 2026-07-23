@@ -7,6 +7,7 @@ const inter = Inter({ subsets: ["latin"] });
 export const metadata: Metadata = {
   metadataBase: new URL('https://company-s-techx.vercel.app'),
   title: "S-TechX | Transforming Ideas Into Intelligent Solutions",
+  applicationName: "S-TechX",
   description: "S-TechX adalah perusahaan teknologi terkemuka yang berfokus pada AI, Machine Learning, Web & Mobile Development. Solusi digital terbaik untuk bisnis Anda.",
   keywords: ["S-TechX", "AI", "Machine Learning", "Web Development", "Mobile Development", "Software House", "Jasa Pembuatan Website", "Jasa Aplikasi Mobile", "Konsultan IT", "Teknologi"],
   icons: {
