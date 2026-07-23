@@ -4,11 +4,11 @@ import CountUp from "react-countup";
 import { useInView } from "react-intersection-observer";
 
 const stats = [
-  { id: 1, label: "Active Clients", value: 150, suffix: "+" },
-  { id: 2, label: "Completed Projects", value: 300, suffix: "+" },
-  { id: 3, label: "Success Rate", value: 98, suffix: "%" },
-  { id: 4, label: "Total Client Transactions", value: 5, suffix: "M+", prefix: "Rp " },
-  { id: 5, label: "Business Partners", value: 50, suffix: "+" },
+  { id: 1, label: "Klien Aktif", value: 150, suffix: "+" },
+  { id: 2, label: "Proyek Selesai", value: 300, suffix: "+" },
+  { id: 3, label: "Tingkat Keberhasilan", value: 98, suffix: "%" },
+  { id: 4, label: "Total Transaksi Klien", value: 5, suffix: "M+", prefix: "Rp " },
+  { id: 5, label: "Mitra Bisnis", value: 50, suffix: "+" },
 ];
 
 export function Statistics() {

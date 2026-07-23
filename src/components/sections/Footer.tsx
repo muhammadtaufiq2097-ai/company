@@ -45,7 +45,7 @@ export function Footer() {
                 const targetId = item === 'Beranda' ? 'home' : item === 'Tentang Kami' ? 'about' : item === 'Layanan' ? 'solutions' : item === 'Portofolio' ? 'portfolio' : 'faq';
                 return (
                   <li key={item}>
-                    <a 
+                    <a
                       href={`/${targetId}`}
                       onClick={(e) => {
                         e.preventDefault();
@@ -64,17 +64,17 @@ export function Footer() {
               })}
             </ul>
           </div>
-          
+
           <div>
             <h4 className="text-white font-semibold text-lg mb-6">Lokasi Kami</h4>
             <div className="w-full h-40 rounded-xl overflow-hidden border border-gray-800 shadow-lg relative group cursor-pointer">
-              <iframe 
-                src="https://maps.google.com/maps?q=Ezrat%20on-line%20sembako,%20Wanasari,%20Cibitung,%20Bekasi&t=&z=17&ie=UTF8&iwloc=B&output=embed" 
-                width="100%" 
-                height="100%" 
-                style={{ border: 0 }} 
-                allowFullScreen={false} 
-                loading="lazy" 
+              <iframe
+                src="https://maps.google.com/maps?q=Ezrat%20on-line%20sembako,%20Wanasari,%20Cibitung,%20Bekasi&t=&z=17&ie=UTF8&iwloc=B&output=embed"
+                width="100%"
+                height="100%"
+                style={{ border: 0 }}
+                allowFullScreen={false}
+                loading="lazy"
                 referrerPolicy="no-referrer-when-downgrade"
                 className="absolute inset-0 w-full h-full rounded-xl transition-transform duration-500 group-hover:scale-110"
               ></iframe>

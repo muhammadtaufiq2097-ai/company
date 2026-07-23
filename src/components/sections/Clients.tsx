@@ -25,7 +25,7 @@ export function Clients() {
           transition={{ duration: 0.5 }}
         >
           <p className="text-center text-gray-400 text-sm font-semibold tracking-wider uppercase">
-            Trusted by Various Organizations and Businesses
+            Dipercaya oleh Berbagai Organisasi dan Bisnis
           </p>
         </motion.div>
       </div>
